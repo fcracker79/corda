@@ -199,13 +199,16 @@ open class TransactionBuilder(
     }
 
     private fun addMissingAttachment(missingClass: String, services: ServicesForResolution) {
-        val attachment = services.attachments.internalFindTrustedAttachmentForClass(missingClass)
-                ?: throw IllegalArgumentException("""The transaction currently built is missing an attachment for class: $missingClass.
+        val lastClassMentioned = Regex("([A-Za-z0-9/]+\$)")
+        val matchResult = lastClassMentioned.find(missingClass)
+        val classToUse = matchResult?.value ?: missingClass
+        val attachment = services.attachments.internalFindTrustedAttachmentForClass(classToUse)
+                ?: throw IllegalArgumentException("""The transaction currently built is missing an attachment for class: $classToUse.
                         Attempted to find a suitable attachment but could not find any in the storage.
                         Please contact the developer of the CorDapp for further instructions.
                     """.trimIndent())
 
-        log.warnOnce("""The transaction currently built is missing an attachment for class: $missingClass.
+        log.warnOnce("""The transaction currently built is missing an attachment for class: $classToUse.
                         Automatically attaching contract dependency $attachment.
                         Please contact the developer of the CorDapp and install the latest version, as this approach might be insecure.
                     """.trimIndent())
