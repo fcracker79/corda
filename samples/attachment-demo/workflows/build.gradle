@@ -6,7 +6,7 @@ apply plugin: 'net.corda.plugins.cordapp'
 description 'Corda attachment demo - workflows'
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // Corda integration dependencies
     cordaCompile project(':core')

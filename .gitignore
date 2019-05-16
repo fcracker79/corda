@@ -74,6 +74,7 @@ lib/quasar.jar
 # IntelliJ
 **/out/
 /classes/
+.idea/*
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/

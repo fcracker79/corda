@@ -26,7 +26,7 @@ configurations {
 }
 
 dependencies {
-    cordaCompile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    cordaCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // The SIMM demo CorDapp depends upon Cash CorDapp features
     cordapp project(':finance:contracts')

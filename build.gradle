@@ -7,7 +7,6 @@ buildscript {
     ext.corda_release_version = constants.getProperty("cordaVersion")
     ext.corda_platform_version = constants.getProperty("platformVersion")
     ext.gradle_plugins_version = constants.getProperty("gradlePluginsVersion")
-
     // Dependency versions. Can run 'gradle dependencyUpdates' to find new versions of things.
     //
     // TODO: Sort this alphabetically.
@@ -244,8 +243,7 @@ allprojects {
         all {
             resolutionStrategy {
                 // Force dependencies to use the same version of Kotlin as Corda.
-                force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-                force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+                force "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
                 force "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
                 // Force dependencies to use the same version of Guava as Corda.

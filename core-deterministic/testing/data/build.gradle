@@ -10,7 +10,7 @@ dependencies {
     testCompile project(':node-driver')
     testCompile project(path: ':core-deterministic:testing:verifier', configuration: 'runtimeArtifacts')
 
-    testCompile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    testCompile "org.jetbrains.kotlin:kotlin-stdlib"
     testCompile "org.jetbrains.kotlin:kotlin-reflect"
     testCompile "junit:junit:$junit_version"
 }

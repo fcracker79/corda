@@ -23,7 +23,7 @@ configurations {
 }
 
 dependencies {
-    shadow "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    shadow "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     shadow "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     shadow "org.slf4j:slf4j-api:$slf4j_version"
 

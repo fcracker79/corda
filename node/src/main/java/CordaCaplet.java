@@ -173,8 +173,8 @@ public class CordaCaplet extends Capsule {
 
     private static void checkJavaVersion() {
         String version = System.getProperty("java.version");
-        if (version == null || !version.startsWith("1.8")) {
-            System.err.printf("Error: Unsupported Java version %s; currently only version 1.8 is supported.\n", version);
+        if (version == null || !version.startsWith("11.")) {
+            System.err.printf("Error: Unsupported Java version %s; currently only version 1.11 is supported.\n", version);
             System.exit(1);
         }
     }
